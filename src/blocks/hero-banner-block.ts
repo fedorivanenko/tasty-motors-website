@@ -11,7 +11,8 @@ export const HeroBannerBlock: Block = {
       name: 'name',
       type: 'text',
       label: 'Anchor / Section Name',
-      required: false,
+      required: true,
+      defaultValue: 'hero-banner',
     },
     {
       name: 'headline',

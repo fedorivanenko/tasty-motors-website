@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload'
-import { HeroBannerBlock } from '../blocks/HeroBannerBlock'
+import { HeroBannerBlock } from '../blocks/hero-banner-block'
+import { BrandStatementBlock } from '@/blocks/brand-statement-block'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -21,7 +22,7 @@ export const Pages: CollectionConfig = {
     {
       name: 'layout',
       type: 'blocks',
-      blocks: [HeroBannerBlock],
+      blocks: [HeroBannerBlock, BrandStatementBlock],
     },
   ],
 }
