@@ -1,6 +1,6 @@
 import type { Block } from 'payload'
 
-export const CaseStudyGridBlock: Block = {
+export const CaseStudiesGridBlock: Block = {
   slug: 'case-studies',
   labels: {
     singular: 'Case Study Grid',

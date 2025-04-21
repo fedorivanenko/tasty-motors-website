@@ -190,6 +190,113 @@ export interface Page {
             blockName?: string | null;
             blockType: 'brand-statement';
           }
+        | {
+            name: string;
+            cars: {
+              model: string;
+              price: number;
+              image: number | Media;
+              orderLink?: string | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'car-grid';
+          }
+        | {
+            name: string;
+            items: {
+              images: {
+                image: number | Media;
+                id?: string | null;
+              }[];
+              request: string;
+              solution: string;
+              model: string;
+              price: number;
+              timeframe: string;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'case-studies';
+          }
+        | {
+            name?: string | null;
+            colors: {
+              label: string;
+              hex: string;
+              textColor?: string | null;
+              backgroundPattern?: (number | null) | Media;
+              id?: string | null;
+            }[];
+            rightImage: number | Media;
+            caption?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'color-accordion';
+          }
+        | {
+            name?: string | null;
+            topText: string;
+            ctaText: string;
+            ctaLink: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta-banner';
+          }
+        | {
+            name: string;
+            lines: {
+              columns: {
+                text: string;
+                id?: string | null;
+              }[];
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'split-headline';
+          }
+        | {
+            name?: string | null;
+            features: {
+              text: string;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'striped-features';
+          }
+        | {
+            name?: string | null;
+            items: {
+              title: string;
+              tagline?: string | null;
+              description: string;
+              ctaLabel?: string | null;
+              ctaLink?: string | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'support-accordion';
+          }
+        | {
+            name: string;
+            title: string;
+            features: {
+              title: string;
+              description: string;
+              id?: string | null;
+            }[];
+            image: number | Media;
+            badgeTextTop?: string | null;
+            badgeTextBottom?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'why-us';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -341,6 +448,139 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               body?: T;
               alignment?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'car-grid'?:
+          | T
+          | {
+              name?: T;
+              cars?:
+                | T
+                | {
+                    model?: T;
+                    price?: T;
+                    image?: T;
+                    orderLink?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'case-studies'?:
+          | T
+          | {
+              name?: T;
+              items?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    request?: T;
+                    solution?: T;
+                    model?: T;
+                    price?: T;
+                    timeframe?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'color-accordion'?:
+          | T
+          | {
+              name?: T;
+              colors?:
+                | T
+                | {
+                    label?: T;
+                    hex?: T;
+                    textColor?: T;
+                    backgroundPattern?: T;
+                    id?: T;
+                  };
+              rightImage?: T;
+              caption?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cta-banner'?:
+          | T
+          | {
+              name?: T;
+              topText?: T;
+              ctaText?: T;
+              ctaLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'split-headline'?:
+          | T
+          | {
+              name?: T;
+              lines?:
+                | T
+                | {
+                    columns?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'striped-features'?:
+          | T
+          | {
+              name?: T;
+              features?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'support-accordion'?:
+          | T
+          | {
+              name?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    tagline?: T;
+                    description?: T;
+                    ctaLabel?: T;
+                    ctaLink?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'why-us'?:
+          | T
+          | {
+              name?: T;
+              title?: T;
+              features?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              image?: T;
+              badgeTextTop?: T;
+              badgeTextBottom?: T;
               id?: T;
               blockName?: T;
             };

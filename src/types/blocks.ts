@@ -39,7 +39,7 @@ export type WhyUsBlockProps = {
 }
 
 export type StripedFeatureBlockProps = {
-  blockType: 'feature-stripes'
+  blockType: 'striped-features'
   name?: string
   features: {
     text: string

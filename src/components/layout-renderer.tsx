@@ -54,7 +54,7 @@ export const LayoutRenderer: React.FC<LayoutRendererProps> = ({ layout }) => {
             return <SplitHeadlineBlock key={i} {...block} />
           case 'car-grid':
             return <CarGridBlock key={i} {...block} />
-          case 'feature-stripes':
+          case 'striped-features':
             return <StripedFeatureBlock key={i} {...block} />
           case 'why-us':
             return <WhyUsBlock key={i} {...block} />
