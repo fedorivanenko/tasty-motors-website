@@ -11,6 +11,8 @@ import { Menu } from '@/components/menu'
 
 import './styles.css'
 
+export const revalidate = 60
+
 export default async function HomePage() {
   const headers = await getHeaders()
   const payload = await getPayload({ config })
