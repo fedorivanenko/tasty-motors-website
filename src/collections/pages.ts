@@ -15,6 +15,10 @@ export const Pages: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
   },
+  versions: {
+    drafts: true,
+    maxPerDoc: 10,
+  },
   fields: [
     {
       name: 'title',

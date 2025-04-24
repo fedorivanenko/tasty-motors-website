@@ -6,8 +6,15 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   upload: {
-    // No need to specify staticDir if you're using a remote storage adapter
-    mimeTypes: ['image/*'], // optional, good to restrict
+    mimeTypes: [
+      'image/jpeg',
+      'image/png',
+      'image/webp',
+      'image/gif',
+      'video/mp4',
+      'video/webm',
+      'video/quicktime',
+    ],
   },
   fields: [
     {

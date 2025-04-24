@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
-    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev & npx next-video sync -w",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
@@ -28,6 +28,7 @@
     "graphql": "^16.8.1",
     "lucide-react": "^0.501.0",
     "next": "15.3.0",
+    "next-video": "^2.2.0",
     "payload": "3.33.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",

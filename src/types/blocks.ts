@@ -126,3 +126,14 @@ export type CTABannerBlockProps = {
   ctaText: string
   ctaLink: string
 }
+
+type StatItem = {
+  value: string
+  description?: string
+}
+
+export type StatsBlockProps = {
+  blockType: 'stats-block'
+  name?: string
+  items: StatItem[]
+}

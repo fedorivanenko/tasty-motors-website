@@ -20,6 +20,7 @@ import {
   ColorsAccordionBlockProps,
   CaseStudiesGridBlockProps,
   CTABannerBlockProps,
+  StatsBlockProps,
 } from '@/types/blocks'
 
 type Block =
@@ -32,6 +33,7 @@ type Block =
   | ColorsAccordionBlockProps
   | CaseStudiesGridBlockProps
   | CTABannerBlockProps
+  | StatsBlockProps
 
 interface LayoutRendererProps {
   layout: Block[]

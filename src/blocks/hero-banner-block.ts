@@ -35,16 +35,6 @@ export const HeroBannerBlock: Block = {
       name: 'locations',
       type: 'array',
       label: 'Locations / Contacts',
-      defaultValue: [
-        {
-          label: 'ALL WORLD',
-          phone: '(675) 393-3102',
-        },
-        {
-          label: 'DUBAI',
-          phone: '(675) 393-3102',
-        },
-      ],
       fields: [
         {
           name: 'label',
@@ -62,7 +52,6 @@ export const HeroBannerBlock: Block = {
       name: 'bottomNote',
       type: 'text',
       label: 'Bottom Note',
-      defaultValue: 'IMPORTED WITH TASTE & DELIVERED WITH PACE',
     },
   ],
 }
