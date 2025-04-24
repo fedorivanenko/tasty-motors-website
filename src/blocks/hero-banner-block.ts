@@ -11,13 +11,21 @@ export const HeroBannerBlock: Block = {
       name: 'video',
       type: 'upload',
       relationTo: 'media',
-      required: true,
+      required: false,
+      /*
+      validate: (val, { siblingData }) => {
+        if (!val && !siblingData?.fallbackImage) {
+          return 'Either video or fallback image must be provided.'
+        }
+        return true
+      },
+       */
     },
     {
       name: 'fallbackImage',
       type: 'upload',
       relationTo: 'media',
-      required: true,
+      required: false,
     },
     {
       name: 'headline',
