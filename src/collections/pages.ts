@@ -1,5 +1,5 @@
 import { CollectionConfig } from 'payload'
-import { HeroBannerBlock } from '../blocks/hero-banner-block'
+import { HeroBannerBlock } from '@/blocks/hero-banner-block'
 import { BrandStatementBlock } from '@/blocks/brand-statement-block'
 import { CarGridBlock } from '@/blocks/car-grid-block'
 import { CaseStudiesGridBlock } from '@/blocks/case-studies-grid-block'
