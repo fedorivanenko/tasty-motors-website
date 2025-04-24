@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { HeroBannerBlock } from '@/components/blocks/hero-banner-block'
+import { HeroBannerBlock, HeroBannerBlockProps } from '@/components/blocks/hero-banner-block'
 import { BrandStatementBlock } from '@/components/blocks/brand-statement-block'
 import { WhyUsBlock } from '@/components/blocks/why-us-block'
 import { StripedFeatureBlock } from '@/components/blocks/striped-features-block'
@@ -11,7 +11,6 @@ import { CaseStudiesGridBlock } from '@/components/blocks/case-studies-grid-bloc
 import { CTABannerBlock } from '@/components/blocks/cta-banner-block'
 
 import {
-  HeroBannerBlockProps,
   SplitHeadlineBlockProps,
   BrandStatementBlockProps,
   WhyUsBlockProps,

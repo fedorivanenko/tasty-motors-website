@@ -8,50 +8,40 @@ export const HeroBannerBlock: Block = {
   },
   fields: [
     {
-      name: 'name',
-      type: 'text',
-      label: 'Anchor / Section Name',
-      required: true,
-      defaultValue: 'hero-banner',
-    },
-    {
-      name: 'headline',
-      type: 'text',
-      required: true,
-      defaultValue: 'TASTIEST CARS.',
-    },
-    {
-      name: 'subheadline',
-      type: 'text',
-      defaultValue: 'IN DUBAI IN 7 DAYS.',
-    },
-    {
-      name: 'backgroundImage',
+      name: 'video',
       type: 'upload',
       relationTo: 'media',
       required: true,
     },
     {
-      name: 'locations',
-      type: 'array',
-      label: 'Locations / Contacts',
-      fields: [
-        {
-          name: 'label',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'phone',
-          type: 'text',
-          required: true,
-        },
-      ],
+      name: 'fallbackImage',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+    {
+      name: 'headline',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'subheadline',
+      type: 'text',
+      required: true,
     },
     {
       name: 'bottomNote',
       type: 'text',
-      label: 'Bottom Note',
+      required: true,
+    },
+    {
+      name: 'locations',
+      type: 'array',
+      required: true,
+      fields: [
+        { name: 'label', type: 'text' },
+        { name: 'phone', type: 'text' },
+      ],
     },
   ],
 }

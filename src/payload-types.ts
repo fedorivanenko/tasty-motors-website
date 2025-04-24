@@ -70,7 +70,6 @@ export interface Config {
     users: User;
     media: Media;
     pages: Page;
-    'brand-colors': BrandColor;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -80,7 +79,6 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
-    'brand-colors': BrandColorsSelect<false> | BrandColorsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -165,18 +163,16 @@ export interface Page {
   layout?:
     | (
         | {
-            name: string;
+            video: number | Media;
+            fallbackImage: number | Media;
             headline: string;
-            subheadline?: string | null;
-            backgroundImage: number | Media;
-            locations?:
-              | {
-                  label: string;
-                  phone: string;
-                  id?: string | null;
-                }[]
-              | null;
-            bottomNote?: string | null;
+            subheadline: string;
+            bottomNote: string;
+            locations: {
+              label?: string | null;
+              phone?: string | null;
+              id?: string | null;
+            }[];
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero-banner';
@@ -305,18 +301,6 @@ export interface Page {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "brand-colors".
- */
-export interface BrandColor {
-  id: number;
-  name: string;
-  hex: string;
-  textColor?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -333,10 +317,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: number | Page;
-      } | null)
-    | ({
-        relationTo: 'brand-colors';
-        value: number | BrandColor;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -427,10 +407,11 @@ export interface PagesSelect<T extends boolean = true> {
         'hero-banner'?:
           | T
           | {
-              name?: T;
+              video?: T;
+              fallbackImage?: T;
               headline?: T;
               subheadline?: T;
-              backgroundImage?: T;
+              bottomNote?: T;
               locations?:
                 | T
                 | {
@@ -438,7 +419,6 @@ export interface PagesSelect<T extends boolean = true> {
                     phone?: T;
                     id?: T;
                   };
-              bottomNote?: T;
               id?: T;
               blockName?: T;
             };
@@ -589,17 +569,6 @@ export interface PagesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "brand-colors_select".
- */
-export interface BrandColorsSelect<T extends boolean = true> {
-  name?: T;
-  hex?: T;
-  textColor?: T;
-  updatedAt?: T;
-  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
