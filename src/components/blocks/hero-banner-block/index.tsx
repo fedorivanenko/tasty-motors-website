@@ -15,7 +15,6 @@ export type HeroBannerBlockProps = {
     phone: string
   }[]
 }
-;('use client')
 
 export const HeroBannerBlock = ({
   headline,
